@@ -1,0 +1,7 @@
+cohorte,fecha,hora,tema
+A,2026-11-11,09:00,Pandas: limpieza de datos
+B,2026-11-11,19:00,Pandas: limpieza de datos
+A,2026-11-13,09:00,Visualización con Matplotlib
+B,2026-11-13,19:00,Visualización con Matplotlib
+A,2026-11-18,09:00,Estadística descriptiva
+B,2026-11-18,19:00,Estadística descriptiva
