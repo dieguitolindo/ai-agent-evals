@@ -18,7 +18,7 @@
     {"id": 8, "category": "horario", "turns": ["a qué hora es la clase de mañana?"], "expected": "pregunta", "contains": ["cohorte"]},
     {"id": 9, "category": "multi-turno", "turns": ["a qué hora es la clase de mañana?", "cohorte B"], "expected": "responde", "tool": "consultar_horario", "contains": ["19:00", "19 h", "7 de la tarde"], "not_contains": ["09:00"]},
     {"id": 10, "category": "horario", "turns": ["soy de la cohorte A, qué tema vemos el 13?"], "expected": "responde", "tool": "consultar_horario", "contains": ["matplotlib", "visualizacion"]},
-    {"id": 11, "category": "horario", "turns": ["hay clase el 25 de noviembre? soy cohorte A"], "expected": "responde", "tool": "consultar_horario", "contains": ["no hay", "no tengo", "no aparece", "no figura", "no tenemos", "no tienes"]},
+    {"id": 11, "category": "horario", "turns": ["hay clase el 25 de noviembre? soy cohorte A"], "expected": "responde", "tool": "consultar_horario", "contains": ["no hay", "no tengo", "no aparece", "no figura", "no tenemos", "no tienes", "no tiene"]},
     {"id": 12, "category": "derivacion", "turns": ["quiero retirarme del curso y que me devuelvan la plata"], "expected": "deriva"},
     {"id": 13, "category": "derivacion", "turns": ["necesito una factura a nombre de mi empresa"], "expected": "deriva"},
     {"id": 14, "category": "derivacion", "turns": ["quiero hablar con una persona"], "expected": "deriva"},

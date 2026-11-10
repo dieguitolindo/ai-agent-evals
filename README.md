@@ -61,6 +61,19 @@ El informe queda en `evals/results/REPORT.md`: tasa de aprobación, costo y tiem
 - En cada push y pull request corren los tests offline (sin llave, sin costo).
 - Las evals con el modelo real se lanzan a mano (*Run workflow* → `run_evals`), usando el secreto `ANTHROPIC_API_KEY`. El informe aparece en el resumen de la ejecución.
 
+## Resultados de la primera corrida (10-11-2026)
+
+| Modelo | Aprobados | Costo de la corrida | Tiempo por caso |
+|---|---|---|---|
+| claude-haiku-5-5 | 23/23 | US$ 0,009 | 2,9 s |
+| claude-opus-5-5 | 22/23 | US$ 0,353 | 4,5 s |
+
+Informe completo: [`evals/results/REPORT.md`](evals/results/REPORT.md).
+
+**Hallazgo: el fallo de Opus era del calificador, no del agente.** En el caso #11 ("¿hay clase el 25 de noviembre?") Opus respondió bien, *"la cohorte A no tiene clases el miércoles 25"*, pero "no tiene" no estaba en la lista de frases aceptadas. Fue un falso negativo. Lo corregí en el set y dejé el informe original tal como salió. Por eso revisar a mano cada fallo es parte del proceso, y es la razón del primer punto de la lista de abajo.
+
+**Lectura:** para este agente, Haiku aprueba lo mismo a un 2,5% del costo y en menos tiempo. Con un set de 23 casos eso no basta para decidir producción, pero sí indica dónde mirar primero.
+
 ## Lo que falta (honesto)
 
 - Los criterios de contenido por palabras son frágiles: una respuesta correcta con otras palabras puede fallar. El siguiente paso es un juez LLM **validado** contra etiquetas mías en un subconjunto de casos.
